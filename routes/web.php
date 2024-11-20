@@ -8,6 +8,8 @@ use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\RiskController;
 use App\Http\Controllers\applicationController;
+use App\Http\Controllers\profileController;
+
 
 
 Route::get('/', function () {
@@ -41,6 +43,41 @@ Route::get('/confirmation', function () {
 Route::get('/approval', function () {
     return view('approval');
 });
+Route::get('/dashboard', function (){
+  return view('pages.dashboard');
+});
 
+// Route::post('profile', function (Request $request){
+//     dd($request);
+// });
+// Route::post('profile', [profileController::class, 'Retail']);
 
+Route::get('profile-create', [profileController::class, 'Create']);
+Route::post('profile-store', [profileController::class, 'Store']);
 
+// Class DatabaseMysql{
+
+//     public function fetchUsers()
+//     {
+       
+//     }
+// }
+
+// class Users {
+//     public string $database;
+ 
+//     public function __construct(DatabaseMysql $database){
+//         //Contructs purpose is to initialiaze  attribute
+//         $this->database = $database;
+//     }
+
+//     public function getUsers()
+//     {
+//         $this->database->fetchUsers();
+//     }
+// }
+
+// $database = new DatabaseMysql();
+// $user = new Users();
+
+// $user->getUsers();
